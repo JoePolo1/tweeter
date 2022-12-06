@@ -1,0 +1,46 @@
+/*
+* Style for new tweet CSS
+*/
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Source Sans Pro", "sans-serif";
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.counter {
+  text-align: right;
+}
+
+textarea {
+  background-color: #f4f1ec;
+}
+
+
+#tweet-text {
+  border: none;
+  border-bottom: solid;
+  border-bottom-color: #545149;
+  border-width: 5px;
+  margin-bottom: 15px;
+  height: 2em;
+}
+
+.buttonCounter {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bungee"
+}
+
+.formLabel {
+  display: none;
+}
+
+::placeholder {
+  margin-left: 50px;
+  vertical-align: bottom;
+  font-weight: bold;
+}

@@ -19,7 +19,12 @@ body {
   background-color: #f4f1ec;
   font-family: "Source Sans Pro", "sans-serif";
   font-size: 24px;
+  width: 100%;
 }
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
 
 /*
 * Logo Stylization 
@@ -29,6 +34,23 @@ body {
   font-family:"Bungee";
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  color: #545149;
+  background-color: #f4f1ec;
+  margin: 0 auto;
+}
+
 /*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+* Button stylize
+*/
+
+button {
+  font-family:"Bungee";
+  background-color: #4056A1;
+  color: #FFFFFF;
+}
