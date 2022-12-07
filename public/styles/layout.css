@@ -62,17 +62,56 @@ button {
 /* tweet header */
 .all-tweets header {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+}
+
+/* This code to specifically align full name in same column as avatar*/
+.full-name {
+  display: inline;
 }
 
 /* tweet footer */
 .all-tweets footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-/* Entire Tweet article styling */
-.all-tweets {
+/* Sets size of avatar within tweets to help with margin issues */
+.tweet-avatar {
+  width: 30px;
+}
+
+/* User handle/username styling (mainly for font) */
+.user-handle {
+  color: #4056A1;
+}
+
+/* Entire Tweet section styling - removed for now, empty. */
+/* .all-tweets { */
+  /* border:#545149 5px solid;
+  padding: 1em; */
+/* } */
+
+/* Tweet text content styling */
+.tweettext {
+  border-bottom: solid;
+  border-bottom-color: #545149;
+  border-bottom-width: 5px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+/* styling for individial tweets - applying box shadow on hover */
+.single-tweet:hover {
+  box-shadow: 6px 4px 9px slateblue;
+}
+
+/* styling for individual tweets when not hovering */
+.single-tweet {
   border:#545149 5px solid;
   padding: 1em;
 }

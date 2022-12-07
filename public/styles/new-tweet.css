@@ -47,7 +47,26 @@ textarea {
   color: crimson;
 }
 
+/* hover styling for tweet links (flag, retweet and heart logo) */
+.tweet-links {
+  color: #4056A1;
+}
 
+.fa-flag:hover {
+  color:indigo
+}
+
+.fa-retweet:hover {
+  color:indigo
+}
+
+.fa-heart:hover {
+  color:indigo
+}
+
+/* .tweet-links:hover {
+  color:indigo
+} */
 
 /* display none to remove form label since placeholder is visible achieving the same. May need to 
 *****replace with a screenreader friendly version*******/
