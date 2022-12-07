@@ -48,21 +48,33 @@ $(() => {
 
   // const $tweet = createTweetElement(tweetData);
 
-  // This appends our new tweet data to tbe bottom of the main tweet container section
-  // $('.all-tweets').append($tweet);
-
-  // TEST - calling renderTweets function here
   renderTweets(data);
+
+  // Responsible for the input form data 
+  const $inputForm = $(".tweet-form")
+  // Responsible for the input form data 
+  $inputForm.on("submit", (event) => {
+    // Prevents page refresh
+    event.preventDefault();
+    // Serializes the input text into URL Encoded data
+    const formTextInput = $inputForm.serialize();
+    // Creates POST request to server
+    $.post("/tweets", formTextInput, (response) => {
+      //TEST log to console
+      console.log(response);
+    })
+  });
+
 });
 
 // This function is responsible for rendering and appending new tweets
-const renderTweets = function(tweets) {
+const renderTweets = function (tweets) {
   // Clears pre-existing cached data
   $('.all-tweets').empty();
 
   // loops through the array tweets using a For Of loop
   for (const tweet of tweets) {
-    
+
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
     $('.all-tweets').prepend(createTweetElement(tweet));
@@ -72,7 +84,7 @@ const renderTweets = function(tweets) {
 
 
 
-const createTweetElement = function(tweet) {
+const createTweetElement = function (tweet) {
   const $tweet = $(`
   <article class="single-tweet">
   <header>
@@ -103,4 +115,8 @@ const createTweetElement = function(tweet) {
   console.log(tweet);
   return $tweet;
 };
+
+
+
+
 
