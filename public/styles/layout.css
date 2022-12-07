@@ -115,3 +115,20 @@ button {
   border:#545149 5px solid;
   padding: 1em;
 }
+
+/* hover styling for tweet links (flag, retweet and heart logo) */
+.tweet-links {
+  color: #4056A1;
+}
+
+.fa-flag:hover {
+  color:indigo
+}
+
+.fa-retweet:hover {
+  color:indigo
+}
+
+.fa-heart:hover {
+  color:indigo
+}
