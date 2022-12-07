@@ -11,15 +11,18 @@ form {
   margin: 0 auto;
 }
 
+/* aligns counter */
 .counter {
   text-align: right;
+  color: #545149;
 }
 
+/* Set background color to same as body for textarea */
 textarea {
   background-color: #f4f1ec;
 }
 
-
+/* */
 #tweet-text {
   border: none;
   border-bottom: solid;
@@ -29,16 +32,30 @@ textarea {
   height: 2em;
 }
 
+/* This is customization for the div holding the button and the counter */
 .buttonCounter {
   display: flex;
   justify-content: space-between;
-  font-family: "Bungee"
+  font-family: "Bungee";
 }
 
+/* Counter color adjustment (when over char limit) */
+.counterOverLimit {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bungee";
+  color: crimson;
+}
+
+
+
+/* display none to remove form label since placeholder is visible achieving the same. May need to 
+*****replace with a screenreader friendly version*******/
 .formLabel {
   display: none;
 }
 
+/* Placeholder alignment for text area */
 ::placeholder {
   margin-left: 50px;
   vertical-align: bottom;

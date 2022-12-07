@@ -54,3 +54,25 @@ button {
   background-color: #4056A1;
   color: #FFFFFF;
 }
+
+/* 
+* All Tweets Stylizing 
+*/
+
+/* tweet header */
+.all-tweets header {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* tweet footer */
+.all-tweets footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Entire Tweet article styling */
+.all-tweets {
+  border:#545149 5px solid;
+  padding: 1em;
+}
