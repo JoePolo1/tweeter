@@ -22,9 +22,3 @@ const onInput = function() {
 }
 
 
-
-// .buttonCounter
-// .counterOverLimit 
-
-
-

@@ -62,19 +62,38 @@
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
 
-        <!-- Error Message Zone -->
-        
+
 
         <!-- FORM Data for a new tweet -->
         
         <form method="POST" action="/tweets" class="tweet-form">
           <label class="formLabel" for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+
+        
           <div class="buttonCounter">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+
+        <!-- Error Message Zone. Note: ID and CLASS are both set for errors to better trigger individually based on criteria -->
+        
+        <p class="errMessageOff" id="nullMsg">
+          <i class="fa-solid fa-triangle-exclamation">
+          </i>
+            "Your tweet cannot be empty. Please write a thoughtful message :)"  <i class="fa-solid fa-triangle-exclamation">
+          </i>
+        </p>
+
+        <p class="errMessageOff" id="limitMsg">
+          <i class="fa-solid fa-triangle-exclamation">
+          </i>  
+            "Your tweet is over 140 characters. Please shorten your message :)"
+          <i class="fa-solid fa-triangle-exclamation">
+        </i>
+      </p>
+        
       </section>
 
       <br>

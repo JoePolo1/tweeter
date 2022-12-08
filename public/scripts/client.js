@@ -13,6 +13,12 @@ $(() => {
     return div.innerHTML;
   };
 
+  // Animation for moving/sliding NAV arrow (not working)
+  // if (".fa-angles-down") {
+  //   $(".fa-angles-down").slideDown("slow", ()  =>  {});
+  //   setTimeout(()  =>  $('.errMessageOff').slideUp(), 1500);
+  // }
+
   // Responsible for the input form data 
   const $inputForm = $(".tweet-form")
 
@@ -27,7 +33,7 @@ $(() => {
     const formTextInput = $inputForm.serialize();
     
     // Runs validator prior to post. False means the condition is a fail and to stop running.
-    if (validator(rawInput) === false)  {
+    if (validator(rawInput) !== "Validator Passed.")  {
       return;
     }
     
@@ -57,11 +63,13 @@ $(() => {
   // Limits input to only occur when within limitations of a new tweet (length, content etc)
   const validator = function(tweetInput) {
     if ((tweetInput === null) || (tweetInput === "")) {
-      alert("Your tweet cannot be empty. Please write a thoughtful message :)");
-      return false;
+      $("#nullMsg").slideDown("slow", ()  =>  {});
+      return setTimeout(()  =>  $('.errMessageOff').slideUp(), 3500);
     } else if (tweetInput.length > 140) {
-      alert("Your tweet is over 140 characters. Please shorten your message :)");
-      return false;
+      $("#limitMsg").slideDown("slow", ()  =>  {});
+      return setTimeout(()  =>  $('.errMessageOff').slideUp(), 3500);
+    } else {
+      return "Validator Passed.";
     }
   };
 
@@ -118,8 +126,6 @@ $(() => {
   };
 
 });
-
-{/* <p>${escaper(inputText)}</p> */}
 
 
 

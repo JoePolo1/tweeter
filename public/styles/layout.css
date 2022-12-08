@@ -22,9 +22,6 @@ body {
   width: 100%;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
 
 /*
 * Logo Stylization 
@@ -89,12 +86,6 @@ button {
   color: #4056A1;
 }
 
-/* Entire Tweet section styling - removed for now, empty. */
-/* .all-tweets { */
-  /* border:#545149 5px solid;
-  padding: 1em; */
-/* } */
-
 /* Tweet text content styling */
 .tweettext {
   border-bottom: solid;
@@ -105,6 +96,7 @@ button {
   border-right: none;
 }
 
+
 /* styling for individial tweets - applying box shadow on hover */
 .single-tweet:hover {
   box-shadow: 6px 4px 9px slateblue;
@@ -114,6 +106,7 @@ button {
 .single-tweet {
   border:#545149 5px solid;
   padding: 1em;
+  border-radius: 25px;
 }
 
 /* hover styling for tweet links (flag, retweet and heart logo) */

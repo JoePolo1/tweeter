@@ -47,11 +47,18 @@ textarea {
   color: crimson;
 }
 
-
-
-/* .tweet-links:hover {
-  color:indigo
-} */
+/* Handles error message styling on text input. set to display:none by default */
+.errMessageOff {
+  display: none;
+  border: 3px solid rgb(154, 13, 41);
+  border-radius: 10px;
+  padding: .25em;
+  justify-content:space-around;
+  text-align: center;
+  color: rgb(154, 13, 41);
+  font-weight: bold;
+  background-color:rgb(224, 133, 133);
+}
 
 /* display none to remove form label since placeholder is visible achieving the same. May need to 
 *****replace with a screenreader friendly version*******/
