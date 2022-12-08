@@ -7,48 +7,33 @@
 // Arrow version of a DOCUMENT READY jquery function
 $(() => {
 
-  // Test / driver code (temporary). Eventually will get this from the server.
-  // const tweetData = {
-  //   "user": {
-  //     "name": "Bilbo Baggins",
-  //     "avatars": "https://i.imgur.com/73hZDYK.png",
-  //     "handle": "@TheRoadGoesEverOn"
+  // const data = [
+  //   {
+  //     "user": {
+  //       "name": "Bilbo Baggins",
+  //       "avatars": "https://i.imgur.com/73hZDYK.png"
+  //       ,
+  //       "handle": "@TheRoadGoesEverOn"
+  //     },
+  //     "content": {
+  //       "text": "It's my 111th birthday! 🎂🎂🎂"
+  //     },
+  //     "created_at": 1461116232227
   //   },
-  //   "content": {
-  //     "text": "It's my 111th birthday! 🎂🎂🎂"
-  //   },
-  //   "created_at": 1461116232227
-  // }
+  //   {
+  //     "user": {
+  //       "name": "Frodo Baggins",
+  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
+  //       "handle": "@mrUnderhill"
+  //     },
+  //     "content": {
+  //       "text": "Anyone down for a long hike this weekend? I was thinking of heading east, my uncle said they have some great views."
+  //     },
+  //     "created_at": 1461113959088
+  //   }
+  // ]
 
-  const data = [
-    {
-      "user": {
-        "name": "Bilbo Baggins",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@TheRoadGoesEverOn"
-      },
-      "content": {
-        "text": "It's my 111th birthday! 🎂🎂🎂"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Frodo Baggins",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@mrUnderhill"
-      },
-      "content": {
-        "text": "Anyone down for a long hike this weekend? I was thinking of heading east, my uncle said they have some great views."
-      },
-      "created_at": 1461113959088
-    }
-  ]
-
-  // const $tweet = createTweetElement(tweetData);
-
-  renderTweets(data);
+  // renderTweets(data);
 
   // Responsible for the input form data 
   const $inputForm = $(".tweet-form")
@@ -60,32 +45,41 @@ $(() => {
     const formTextInput = $inputForm.serialize();
     // Creates POST request to server
     $.post("/tweets", formTextInput, (response) => {
-      //TEST log to console
+      //TEST log to console. 
       console.log(response);
+      // Loads the new post onto the page immediately
+      tweetFetcher();
     })
   });
 
-});
+  // Responsible for laoding/getting/fetching tweets from server
+  const tweetFetcher = function() {
+    $.get('/tweets', (tweets) =>  {
+      console.log(tweets);
+      renderTweets(tweets);
+    })
+  };
 
-// This function is responsible for rendering and appending new tweets
-const renderTweets = function (tweets) {
-  // Clears pre-existing cached data
-  $('.all-tweets').empty();
-
-  // loops through the array tweets using a For Of loop
-  for (const tweet of tweets) {
-
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
-    $('.all-tweets').prepend(createTweetElement(tweet));
-  }
-};
+  // Calls tweetFetcher on page load
+  tweetFetcher();
 
 
+  // This function is responsible for rendering and appending new tweets
+  const renderTweets = function (tweets) {
+    // Clears pre-existing cached data
+    $('.all-tweets').empty();
+    // Loops through the array tweets using a For Of loop
+    for (const tweet of tweets) {
+      // Calls createTweetElement for each tweet and
+      // takes return value and appends it to the tweets container
+      $('.all-tweets').prepend(createTweetElement(tweet));
+    }
+  };
 
 
-const createTweetElement = function (tweet) {
-  const $tweet = $(`
+  // This function is responsible for configuring the elements of a tweet with the provided format
+  const createTweetElement = function (tweet) {
+    const $tweet = $(`
   <article class="single-tweet">
   <header>
     <!-- Div holds the avatar and name -->
@@ -110,13 +104,13 @@ const createTweetElement = function (tweet) {
       <i class="fa-solid fa-heart"></i>
     </div>
   </footer>
-</article>
-<br>`);
-  console.log(tweet);
-  return $tweet;
-};
+  </article>
+  <br>`);
+    console.log(tweet);
+    return $tweet;
+  };
 
-
+});
 
 
 
