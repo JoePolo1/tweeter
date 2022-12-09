@@ -13,16 +13,10 @@ $(() => {
     return div.innerHTML;
   };
 
-  // Animation for moving/sliding NAV arrow (not working)
-  // if (".fa-angles-down") {
-  //   $(".fa-angles-down").slideDown("slow", ()  =>  {});
-  //   setTimeout(()  =>  $('.errMessageOff').slideUp(), 1500);
-  // }
+  // Responsible for the input form data
+  const $inputForm = $(".tweet-form");
 
-  // Responsible for the input form data 
-  const $inputForm = $(".tweet-form")
-
-  // Responsible for the input form data 
+  // Responsible for the input form data
   $inputForm.on("submit", (event) => {
 
     // Prevents page refresh
@@ -39,12 +33,12 @@ $(() => {
     
     // Creates POST request to server
     $.post("/tweets", formTextInput, (response) => {
-      //TEST log to console. 
+      //TEST log to console.
       console.log(response);
 
       // Loads the new post onto the page immediately
       tweetFetcher();
-    })
+    });
   });
 
   // Responsible for loading/getting/fetching tweets from server
@@ -52,7 +46,7 @@ $(() => {
     $.get('/tweets', (tweets) =>  {
       console.log(tweets);
       renderTweets(tweets);
-    })
+    });
   };
 
   // Calls tweetFetcher on page load
@@ -74,7 +68,7 @@ $(() => {
   };
 
   // This function is responsible for rendering and appending new tweets
-  const renderTweets = function (tweets) {
+  const renderTweets = function(tweets) {
     // Clears pre-existing cached data
     $('.all-tweets').empty();
     // Loops through the array tweets using a For Of loop
@@ -87,7 +81,7 @@ $(() => {
 
 
   // This function is responsible for configuring the elements of a tweet with the provided format
-  const createTweetElement = function (tweet) {
+  const createTweetElement = function(tweet) {
     const timeFormatted = timeago.format(new Date(tweet.created_at));
     const fullName = tweet.user.name;
     const username = tweet.user.handle;

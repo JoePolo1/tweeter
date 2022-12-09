@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("#tweet-text").on("input", onInput)
+  $("#tweet-text").on("input", onInput);
 });
 
 // Responsible for adding to the counter of characters after being called above on input
@@ -19,6 +19,6 @@ const onInput = function() {
     $(".counter").removeClass("counterOverLimit");
   }
   output.text(count);
-}
+};
 
 
