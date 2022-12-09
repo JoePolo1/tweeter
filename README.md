@@ -63,8 +63,8 @@ Users may compose a tweet post below the "Compose Tweet" label, in the provided 
 
 #### The following two criteria exist for a tweet to post:
 
-- A user may not tweet an empty post, they will encounter an error message
-- A user may not tweet a post above the character limit of 140 characters
+- A user may not tweet an empty post, they will encounter an error message.
+- A user may not tweet a post above the character limit of 140 characters. The character counter at the bottom right of the form will turn red to indicate your tweet length is over the limit. Attempting to submit a long tweet will produce an error message. 
 
 Given those conditions pass, the tweet will automatically appear above the second most recent tweet, using the **Magic of the internet.**
 
