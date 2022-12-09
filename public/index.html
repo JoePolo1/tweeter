@@ -4,6 +4,9 @@
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
+    <!-- Metadata including viewport zoom disabler -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
@@ -43,90 +46,95 @@
     <nav class="navclass">
       <span class="logo">tweeter</span>
 
-      <span class="navMenu"><b>Write</b> a new tweet <i class="fa-solid fa-angles-down"></i></span>
+      <span class="navMenu"><b>Write</b> a new tweet 
+        <i class="fa-solid fa-angles-down"></i></span>
     </nav>
 
-    <!-- Header element for Avatar -->
-    <header class="header">
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div class="avatarName">
-          <h2>Gandalf Stormcrow</h2>
-      </div>
-    </header>
-
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-
-
-
-        <!-- FORM Data for a new tweet -->
-        
-        <form method="POST" action="/tweets" class="tweet-form">
-          <label class="formLabel" for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-
-        
-          <div class="buttonCounter">
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-
-        <!-- Error Message Zone. Note: ID and CLASS are both set for errors to better trigger individually based on criteria -->
-        
-        <p class="errMessageOff" id="nullMsg">
-          <i class="fa-solid fa-triangle-exclamation">
-          </i>
-            "Your tweet cannot be empty. Please write a thoughtful message :)"  <i class="fa-solid fa-triangle-exclamation">
-          </i>
-        </p>
-
-        <p class="errMessageOff" id="limitMsg">
-          <i class="fa-solid fa-triangle-exclamation">
-          </i>  
-            "Your tweet is over 140 characters. Please shorten your message :)"
-          <i class="fa-solid fa-triangle-exclamation">
-        </i>
-      </p>
-        
-      </section>
-
-      <br>
-
-      <!-- Existing tweets section -->
-      <section class="all-tweets">
-        <article class="single-tweet">
-          <header>
-            <!-- Div holds the avatar and name -->
-            <div>
-              <img class="tweet-avatar" src="images/lRUnDgU.png">
-              <h4 class="full-name">Frodo Baggins</h4>
-            </div>
-
-            <!-- Username handle is also stored in the header -->
-            <h4 class="user-handle">@misterUnderhill</h4>
-          </header>
-
-          <!-- Tweet text below -->
-          <div class="tweettext">
-            <p>Anyone down for a long hike this weekend? I was thinking of heading east, my uncle said they have some great views. </p>
-          </div>
-          <footer>
-            <p>10 days ago</p>
-            <div class="tweet-links">
-              <i class="fa-solid fa-flag"></i>
-              <i class="fa-solid fa-retweet"></i>
-              <i class="fa-solid fa-heart"></i>
-            </div>
-          </footer>
-        </article>
+    <!-- This div is a container for the avatar header as well as the main tweet section for flex display purposes -->
+    <div class="super-container">
+      <!-- Header element for Avatar -->
+      <header class="header">
+        <div>
+            <img src="/images/profile-hex.png"> 
+        </div>
         <br>
-      </section>
+        <div class="avatarName">
+            <h2>Gandalf Stormcrow</h2>
+        </div>
+      </header>
+
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+
+
+
+          <!-- FORM Data for a new tweet -->
+        
+          <form method="POST" action="/tweets" class="tweet-form">
+            <label class="formLabel" for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+            
+
+        
+            <div class="buttonCounter">
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+
+          <!-- Error Message Zone. Note: ID and CLASS are both set for errors to better trigger individually based on criteria -->
+        
+          <p class="errMessageOff" id="nullMsg">
+            <i class="fa-solid fa-triangle-exclamation">
+            </i>
+              "Your tweet cannot be empty. Please write a thoughtful message :)"  <i class="fa-solid fa-triangle-exclamation">
+            </i>
+          </p>
+
+          <p class="errMessageOff" id="limitMsg">
+            <i class="fa-solid fa-triangle-exclamation">
+            </i>  
+            "Your tweet is over 140 characters. Please shorten your message :)"
+            <i class="fa-solid fa-triangle-exclamation">
+            </i>
+          </p>
+        
+        </section>
+
+        <br>
+
+        <!-- Existing tweets section -->
+        <section class="all-tweets">
+          <article class="single-tweet">
+            <header>
+              <!-- Div holds the avatar and name -->
+              <div>
+                <img class="tweet-avatar" src="images/lRUnDgU.png">
+                <h4 class="full-name">Frodo Baggins</h4>
+              </div>
+
+              <!-- Username handle is also stored in the header -->
+              <h4 class="user-handle">@misterUnderhill</h4>
+            </header>
+
+            <!-- Tweet text below -->
+            <div class="tweettext">
+              <p>Anyone down for a long hike this weekend? I was thinking of heading east, my uncle said they have some great views. </p>
+            </div>
+            <footer>
+              <p>10 days ago</p>
+              <div class="tweet-links">
+                <i class="fa-solid fa-flag"></i>
+                <i class="fa-solid fa-retweet"></i>
+                <i class="fa-solid fa-heart"></i>
+              </div>
+            </footer>
+          </article>
+          <br>
+        </section>
+    </div>
     </main>
   </body>
 </html>

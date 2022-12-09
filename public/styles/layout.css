@@ -11,7 +11,9 @@ html {
 }
 
 /*
- * Global layout stuff
+ * This page is responsible for Global layout styling
+ * 
+ * Media query styles and rulesets can be found at the bottom of this page.
  */
 
 body {
@@ -24,7 +26,7 @@ body {
 
 
 /*
-* Logo Stylization 
+* Logo Styling 
 */
 
 .logo {
@@ -32,7 +34,6 @@ body {
 }
 
 .container {
-  display: flex;
   flex-direction: column;
   width: 90%;
   align-items: center;
@@ -43,7 +44,7 @@ body {
 }
 
 /*
-* Button stylize
+* Button styling
 */
 
 button {
@@ -56,7 +57,7 @@ button {
 * All Tweets Stylizing 
 */
 
-/* tweet header */
+/* Tweet header */
 .all-tweets header {
   display: flex;
   flex-direction: row;
@@ -69,7 +70,7 @@ button {
   display: inline;
 }
 
-/* tweet footer */
+/* Tweet footer */
 .all-tweets footer {
   display: flex;
   justify-content: space-between;
@@ -86,7 +87,7 @@ button {
   color: #4056A1;
 }
 
-/* Tweet text content styling */
+/* Tweet text content styling and edge overflow containment */
 .tweettext {
   border-bottom: solid;
   border-bottom-color: #545149;
@@ -94,22 +95,23 @@ button {
   border-top: none;
   border-left: none;
   border-right: none;
+  overflow-wrap: break-word;
 }
 
 
-/* styling for individial tweets - applying box shadow on hover */
+/* Styling for individial tweets - apply box shadow when hovering */
 .single-tweet:hover {
   box-shadow: 6px 4px 9px slateblue;
 }
 
-/* styling for individual tweets when not hovering */
+/* Styling for individual tweets when not hovering */
 .single-tweet {
   border:#545149 5px solid;
   padding: 1em;
   border-radius: 25px;
 }
 
-/* hover styling for tweet links (flag, retweet and heart logo) */
+/* Hover styling for tweet links (flag, retweet and heart logo) */
 .tweet-links {
   color: #4056A1;
 }
@@ -124,4 +126,40 @@ button {
 
 .fa-heart:hover {
   color:indigo
+}
+
+
+/* 
+* Media Query Styling and Ruleset
+*/
+
+/* Screen Style - Desktop View */
+@media only screen and (min-width: 1024px)  {
+
+  /* Contains both the avatar header and the main tweet section */
+  .super-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-left: 40px;
+  }
+
+  /* Avatar + Username Main Header */
+  .header{
+    width: 33.3%;
+    margin-top: 160px;
+  }
+
+  /* Main Tweets Container (includes form as well) */
+  .container {
+    width: 66.6%;
+    margin: 120px 2em 0;
+  }
+
+  /* Adds background colour to nav bar on desktop mode */
+  .navclass {
+    background-color: #4056A1;
+  }
+
 }
