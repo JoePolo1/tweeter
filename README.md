@@ -25,6 +25,16 @@ This repository is the starter code for the project: Students will fork and clon
 
 ***Despite these challenges, we're convinced this app is still better than Twitter.***
 
+## Screenshots
+
+#### Mobile View:
+
+!["Mobile View"](https://github.com/JoePolo1/tweeter/blob/master/docs/Mobile%20View.png)
+
+#### Desktop View:
+
+!["Desktop View"](https://github.com/JoePolo1/tweeter/blob/master/docs/Desktop%20View.png)
+
 ## Main Features
 
 ### The Tweeter Page
@@ -73,5 +83,5 @@ Users may compose a tweet post below the "Compose Tweet" label, in the provided 
 
 !["Tweet Length Error"](https://github.com/JoePolo1/tweeter/blob/master/docs/Tweet%20Length%20Error.png)
 
-Given those conditions pass, the tweet will automatically appear above the second most recent tweet, using the **Magic of the internet.**
+Given those conditions pass, the new tweet will automatically appear above the second most recent tweet, using the **Magic of the internet.**
 
