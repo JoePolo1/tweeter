@@ -47,6 +47,8 @@ The expanded view of a desktop screen (Above 1024 resolution) changes the view o
 
 Users may view existing tweets on the landing page. The composition of a tweet is as follows from top to bottom:
 
+!["Composition of a Tweet"](https://github.com/JoePolo1/tweeter/blob/master/docs/Composition%20of%20a%20Tweet.png)
+
 1) Avatar and full name (top left) : The full name and photo avatar of the user who authored the tweet.
 
 2) Username/User Handle (top right) : The user handle of the user who psoted the tweet, preceded by the @ symbol. 
@@ -57,14 +59,19 @@ Users may view existing tweets on the landing page. The composition of a tweet i
 
 5) Non-functional Icons (bottom right) : The Flag, Re-tweet and Like icon are currently non functional, however do change color when hovered over. (See above disclaimer).
 
-### Composing a Tweet
+### Composing a New Tweet
 
 Users may compose a tweet post below the "Compose Tweet" label, in the provided text area input which contains the placeholder message *"What are you humming about?"* 
 
 #### The following two criteria exist for a tweet to post:
 
-- A user may not tweet an empty post, they will encounter an error message.
-- A user may not tweet a post above the character limit of 140 characters. The character counter at the bottom right of the form will turn red to indicate your tweet length is over the limit. Attempting to submit a long tweet will produce an error message. 
+- A user may not tweet an empty post, they will encounter an error message:
+
+!["Null Empty Tweet Error"](https://github.com/JoePolo1/tweeter/blob/master/docs/Empty%20Tweet%20Error.png)
+
+- A user may not tweet a post above the character limit of 140 characters. The character counter at the bottom right of the form will turn red to indicate your tweet length is over the limit. Attempting to submit a long tweet will produce an error message.:
+
+!["Tweet Length Error"](https://github.com/JoePolo1/tweeter/blob/master/docs/Tweet%20Length%20Error.png)
 
 Given those conditions pass, the tweet will automatically appear above the second most recent tweet, using the **Magic of the internet.**
 
