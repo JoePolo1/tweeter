@@ -40,9 +40,6 @@ $(() => {
       // Set the counter back to 140 on clearing text for new tweet
       $(".counter").text(140);
 
-      //TEST log to console.
-      console.log(response);
-
       // Loads the new post onto the page immediately
       tweetFetcher();
     });
@@ -51,7 +48,6 @@ $(() => {
   // Responsible for loading/getting/fetching tweets from server
   const tweetFetcher = function() {
     $.get('/tweets', (tweets) =>  {
-      console.log(tweets);
       renderTweets(tweets);
     });
   };
@@ -122,7 +118,6 @@ $(() => {
     </footer>
     </article>
     <br>`);
-    console.log(tweet);
     return $tweet;
   };
 
