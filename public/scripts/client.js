@@ -33,6 +33,13 @@ $(() => {
     
     // Creates POST request to server
     $.post("/tweets", formTextInput, (response) => {
+
+      // Clear the text area
+      $("#tweet-text").val('');
+
+      // Set the counter back to 140 on clearing text for new tweet
+      $(".counter").text(140);
+
       //TEST log to console.
       console.log(response);
 
